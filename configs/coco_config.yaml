@@ -1,0 +1,24 @@
+DATA:
+  TRAIN_COCO_JSON: "PATH-TO-THE-TRAIN-JSON"
+  VALID_COCO_JSON: "PATH-TO-THE-VALID-JSON"
+  CLASSES:
+    - "CLS_1"
+    - "CLS_2"
+    - "CLS_3"
+  NUM_TYPES: 3
+  PATCH_SIZE: 512
+TRAIN:
+  DEVICE: "cuda"
+  EPOCHS: 50
+  BATCH_SIZE: 2
+EVAL:
+  COCO_EVAL_STEP: 5
+  COCO_EVAL_CAT_IDS: [1, 2]
+MODEL:
+  BACKBONE: "resnet"
+  PRETRAINED: "./pretrained/resnet50-0676ba61.pth"
+  NUM_TYPES: 3
+LOGGING:
+  SAVE_STEP: 5
+  SAVE_PATH: "./experiments/initial/"
+  VERBOSE: TRUE
